@@ -192,7 +192,7 @@
         }
         
         async function fetchTeamsData() {
-            let URL = "http://localhost:8080/Teams/Count";
+            let URL = "https://signup-form.vapor.cloud/Teams/Count";
             let response = await fetch(URL);
             let teams = await response.json();
             
@@ -201,7 +201,7 @@
             let loopController = 1;
             
             while(loopController < count) {
-                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
                 
@@ -226,8 +226,8 @@
             nameCell.innerHTML = school;
             sportCell.innerHTML = sport;
             
-            let url = "http://localhost:8080/moreInfo/" + id;
-            moreInfoCell.innerHTML = '<a href="http://localhost:8080/moreInfo/' + id + '"> More Info</a>';
+            let url = "https://signup-form.vapor.cloud/moreInfo/" + id;
+            moreInfoCell.innerHTML = '<a href="https://signup-form.vapor.cloud/moreInfo/' + id + '"> More Info</a>';
             
         }
         
@@ -238,7 +238,7 @@
         }
         
         async function fetchTeamsDataBasketball() {
-            let URL = "http://localhost:8080/Teams/Count";
+            let URL = "https://signup-form.vapor.cloud/Teams/Count";
             let response = await fetch(URL);
             let teams = await response.json();
             
@@ -247,7 +247,7 @@
             let loopController = 1;
             
             while(loopController < count) {
-                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
                 
@@ -270,7 +270,7 @@
         }
         
         async function fetchTeamsDataFootball() {
-            let URL = "http://localhost:8080/Teams/Count";
+            let URL = "https://signup-form.vapor.cloud/Teams/Count";
             let response = await fetch(URL);
             let teams = await response.json();
             
@@ -279,7 +279,7 @@
             let loopController = 1;
             
             while(loopController < count) {
-                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
                 
@@ -302,7 +302,7 @@
         }
         
         async function fetchTeamsDataTennis() {
-            let URL = "http://localhost:8080/Teams/Count";
+            let URL = "https://signup-form.vapor.cloud/Teams/Count";
             let response = await fetch(URL);
             let teams = await response.json();
             
@@ -311,7 +311,7 @@
             let loopController = 1;
             
             while(loopController < count) {
-                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
                 
@@ -334,7 +334,7 @@
         }
         
         async function fetchTeamsDataSwimming() {
-            let URL = "http://localhost:8080/Teams/Count";
+            let URL = "https://signup-form.vapor.cloud/Teams/Count";
             let response = await fetch(URL);
             let teams = await response.json();
             
@@ -343,7 +343,7 @@
             let loopController = 1;
             
             while(loopController < count) {
-                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
                 
@@ -366,7 +366,7 @@
         }
         
         async function fetchTeamsDataHockey() {
-            let URL = "http://localhost:8080/Teams/Count";
+            let URL = "https://signup-form.vapor.cloud/Teams/Count";
             let response = await fetch(URL);
             let teams = await response.json();
             
@@ -375,7 +375,7 @@
             let loopController = 1;
             
             while(loopController < count) {
-                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
                 
