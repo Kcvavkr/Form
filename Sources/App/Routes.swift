@@ -121,6 +121,8 @@ final class Routes: RouteCollection {
                                                 "888888": "#888888",
                                                 "sport": school.event, "category": school.category])
         }
+        
+        
 
     }
 }

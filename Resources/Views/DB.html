@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Reverb 2018 Team Database</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,6 +21,8 @@
                         background-color: white;
                         border: 1px solid black;
                         margin-left: 10px;
+                        background: linear-gradient(45deg, lightskyblue, lightsteelblue);
+
                         
                         
                     }
@@ -31,6 +34,7 @@
                     border-radius: 35px;
                     background-color: white;
                     border: 1px solid black;
+                    background: linear-gradient(-45deg, lightskyblue, lightsteelblue);
                 }
                 #SportsTable {
                     color: transparent;
@@ -65,7 +69,7 @@
         <div>
         <div id="Events" onclick="eventsClicked()">
             
-            <h1 align="center" class="Headings">Events</h1>
+            <h1 align="center" class="Headings" style="margin-top: calc(175px - 40px);">Events</h1>
             
             
             
@@ -76,7 +80,7 @@
         
         
         <div id="Teams" onclick="teamsClicked()">
-            <h1 align="center" class="Headings">Teams</h1>
+            <h1 align="center" class="Headings" style="margin-top: calc(175px - 40px);">Teams</h1>
             
             
         </div>
@@ -200,7 +204,7 @@
             console.log("Count: " + count);
             let loopController = 1;
             
-            while(loopController < count) {
+            while(loopController <= count) {
                 var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
@@ -246,7 +250,7 @@
             console.log("Count: " + count);
             let loopController = 1;
             
-            while(loopController < count) {
+            while(loopController <= count) {
                 var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
@@ -278,7 +282,7 @@
             console.log("Count: " + count);
             let loopController = 1;
             
-            while(loopController < count) {
+            while(loopController <= count) {
                 var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
@@ -310,7 +314,7 @@
             console.log("Count: " + count);
             let loopController = 1;
             
-            while(loopController < count) {
+            while(loopController <= count) {
                 var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
@@ -342,7 +346,7 @@
             console.log("Count: " + count);
             let loopController = 1;
             
-            while(loopController < count) {
+            while(loopController <= count) {
                 var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
@@ -374,7 +378,7 @@
             console.log("Count: " + count);
             let loopController = 1;
             
-            while(loopController < count) {
+            while(loopController <= count) {
                 var TeamURL = "https://signup-form.vapor.cloud/Team/" + loopController;
                 var res = await fetch(TeamURL);
                 var team = await res.json();
