@@ -98,21 +98,15 @@
 	
 	<script>
 		function checkInfo() {
-			console.log("checkInfo");
 			let eventIndex = document.getElementsByName("Event")[0].selectedIndex;
-			console.log(eventIndex);
 			let event = document.getElementsByTagName("option")[eventIndex].value;
-			console.log(event);
 			let catIndex = document.getElementsByName("Category")[0].selectedIndex;
-			console.log(catIndex);
 			let categoryName = document.getElementsByTagName("option")[catIndex + 6].value;
-			console.log("Category: " + categoryName);
 
 			if(event == "swimming" || event == "hockey" || event == "tennis") {
 				
 				
 				if (categoryName == "u12") {
-					console.log("scam");
 					alert("error. " + event + " is only available for Under 10");
 				} else {
 					submit();
@@ -124,7 +118,6 @@
 		}
 	
 		function submit() {
-			console.log("submit Called");
 			if(form.checkValidity) {
 				form.submit;
 			} else {

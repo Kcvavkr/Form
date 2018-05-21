@@ -64,7 +64,7 @@ final class Routes: RouteCollection {
             try school.save()
             
 
-            return "\(event), \(name)"
+            return try self.view.make("Submitted.html")
             
             
         }

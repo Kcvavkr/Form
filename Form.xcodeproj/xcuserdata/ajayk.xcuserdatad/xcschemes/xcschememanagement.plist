@@ -27,7 +27,7 @@
 		<key>CorePackageDescription.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>5</integer>
 		</dict>
 		<key>CryptoPackageDescription.xcscheme</key>
 		<dict>
@@ -47,12 +47,12 @@
 		<key>FluentPackageDescription.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>10</integer>
 		</dict>
 		<key>FluentProviderPackageDescription.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>10</integer>
+			<integer>6</integer>
 		</dict>
 		<key>Form-Package.xcscheme_^#shared#^_</key>
 		<dict>

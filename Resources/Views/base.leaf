@@ -1,5 +1,53 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+
+<style>
+.submitButtonDiv:hover div .submitLabel {
+color: white;
+transition: 200ms ease-in-out;
+
+}
+
+.submitButtonDiv:hover {
+background-color: #0061ff;
+transition: 200ms ease-in-out;
+}
+
+.submitLabel {
+color: #0061ff;
+transition: 200ms ease-in-out;
+}
+
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<h1 align="center" style="font-family: sans-serif; font-size: 50px; transition: 200ms ease-in-out;">Successfully Submitted</h1>
+<div>
+
+<div style="width: 350px; height: 50px; border: 1px solid #0061ff; border-radius: 5px; margin-left: auto; margin-right: auto; margin-top: calc(50vh - 125px)" class="submitButtonDiv">
+<div style="margin-left: auto; margin-right: auto; width: 173px; margin-top: calc((50px - 29px) / 2 )">
+<label style="font-size: 25px; font-family: sans-serif; transition: 200ms ease-in-out;" class="submitLabel">Submit Another</label>
+</div>
+
+</div>
+</div>
+
+
+
+</body>
+
+</html><!DOCTYPE html>
+<html>
 <head>
 	<title>#import("title")</title>
 	<link rel="stylesheet" href="/styles/app.css">
