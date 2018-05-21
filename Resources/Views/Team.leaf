@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <div>
+                <h1 class="text-center" style="font-size:45px; align:center;" align="center">#(school)</h1>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h1 class="text-right" align="center">#(sport)</h1>
+                </div>
+                <div class="col">
+                    <h1 align="center">#(category)</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div style="width:350px;margin-left:auto;margin-right:auto;border: 0px solid black; box-shadow: 1px 1px 16px 1px #(888888); border-radius: 4px;">
+<div style="margin-top:15px;margin-bottom:15px;"><label style="margin-left:10px;">#(p1)</label><label class="float-right" style="margin-right:10px;float: right;">#(DOB1)</label></div>
+<div style="margin-top:15px;margin-bottom:15px;"><label style="margin-left:10px;">#(p2)</label><label class="float-right" style="margin-right:10px;float: right;">#(DOB2)</label></div>
+        <div style="margin-top:15px;margin-bottom:15px;"><label style="margin-left:10px;">#(p3)</label><label class="float-right" style="margin-right:10px;float: right; margin-left:auto;">#(DOB3)</label></div>
+        <div style="margin-top:15px;margin-bottom:15px;"><label style="margin-left:10px;">#(p4)</label><label class="float-right" style="margin-right:10px;float: right; margin-left:auto;">#(DOB4)</label></div>
+        <div style="margin-top:15px;margin-bottom:15px;"><label style="margin-left:10px;">#(p5)</label><label class="float-right" style="margin-right:10px;float: right; margin-left:auto;">#(DOB5)</label></div>
+        <div style="margin-top:15px;margin-bottom:15px;"><label style="margin-left:10px;">#(p6)</label><label class="float-right" style="margin-right:10px;float: right; margin-left:auto;">#(DOB6)</label></div>
+        <div style="margin-top:15px;margin-bottom:15px;"><label style="margin-left:10px;">#(p7)</label><label class="float-right" style="margin-right:10px;float: right; margin-left:auto;">#(DOB7)</label></div>
+        <div style="margin-top:15px;margin-bottom:15px;"><label style="margin-left:10px;">#(p8)</label><label class="float-right" style="margin-right:10px;float: right; margin-left:auto;">#(DOB8)</label></div>
+        <div style="margin-top:15px;margin-bottom:15px;"><label style="margin-left:10px;">#(p9)</label><label class="float-right" style="margin-right:10px;float: right; margin-left:auto;">#(DOB9)</label></div>
+        <div style="margin-top:15px;margin-bottom:15px;"><label style="margin-left:10px;">#(p10)</label><label class="float-right" style="margin-right:10px;float: right; margin-left:auto;">#(DOB10)</label></div>
+    </div>
+    <footer>
+        <div></div>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

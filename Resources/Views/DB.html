@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                    
+
+                
+                
+                
+                <style>
+                    
+                    #Events {
+                        margin-right: calc(50vw - 400px);
+                        float: right;
+                        width: 350px;
+                        height: 350px;
+                        border-radius: 35px;
+                        background-color: white;
+                        border: 1px solid black;
+                        margin-left: 10px;
+                        
+                        
+                    }
+                #Teams {
+                    margin-left: calc(50vw - 400px);
+                    float: left;
+                    width: 350px;
+                    height: 350px;
+                    border-radius: 35px;
+                    background-color: white;
+                    border: 1px solid black;
+                }
+                #SportsTable {
+                    color: transparent;
+                    background-color: transparent;
+                    height: 0px;
+                    width: 100vw;
+                }
+                #TeamsTable {
+                    color: transparent;
+                    height: 0px;
+                    width: 100vw;
+                }
+                
+                input:focus {
+                    outline: none;
+                }
+                
+                
+                
+                
+                
+                
+                    </style>
+                
+                
+                
+                </head>
+    
+    
+    <body>
+        
+        <div>
+        <div id="Events" onclick="eventsClicked()">
+            
+            <h1 align="center" class="Headings">Events</h1>
+            
+            
+            
+            
+            
+            
+        </div>
+        
+        
+        <div id="Teams" onclick="teamsClicked()">
+            <h1 align="center" class="Headings">Teams</h1>
+            
+            
+        </div>
+        
+        
+        <div style="height: 35px;">
+            
+            <div style="margin-left: auto; margin-right: auto; width: 400px; height: 0px; margin-top: 55px; z-index: 2;" id="SearchDiv"><i class="fa fa-search" style="border: 1px solid transparent; width: 405px; height: 0px; font-size: 0px; padding-left: 5px; border-radius: 5px;" id="searchIcon"><input type="text" style="margin-left: 1px; width: 372px; border: none; border-radius: 5px; height: 0px;" id="SearchInput" onkeyup="SearchFilter()" onfocus="searchFocus()" onfocusout="searchFocusOut()"></i> </div>
+            
+            
+        
+        
+        </div>
+        
+        <table id="SportsTable" style="height: 0px;">
+            
+            <thead>
+                
+                
+                
+                
+            </thead>
+            <tbody>
+                
+                <tr class="">
+                    <th onclick="basketball()">Basketball</th>
+                    <th onclick="football()">Football</th>
+                    <th onclick="tennis()">Tennis</th>
+                    <th onclick="swimming()">Swimming</th>
+                    <th onclick="hockey()">Hockey</th>
+                    
+                    
+                    
+                </tr>
+                
+                
+                
+                
+            </tbody>
+            
+            
+            
+            
+            
+        </table>
+        
+        <table id="TeamsTable" class="w3-table-all w3-hoverable">
+            <thead>
+                
+                <tr class="w3-hover-black">
+                    
+                    <th>School</th>
+                    <th>Sport</th>
+                    <th>moreInfo</th>
+                    
+                    
+                    
+                </tr>
+                
+                
+            </thead>
+            
+            
+            
+            
+        </table>
+        
+        </div>
+        
+        
+        <script>
+            function minimiseDivs() {
+                document.getElementById("Teams").style.transitionDuration = "200ms";
+                document.getElementById("Teams").style.height = "0px";
+                document.getElementById("Teams").style.color = "transparent";
+                document.getElementById("Events").style.transitionDuration = "200ms";
+                document.getElementById("Events").style.height = "0px";
+                document.getElementById("Events").style.color = "transparent";
+                document.getElementById("Teams").style.border = "none";
+                document.getElementById("Events").style.border = "none";
+                
+                
+            }
+        
+        function maximiseTable() {
+            document.getElementById("SportsTable").style.height = "50vh";
+            document.getElementById("SportsTable").style.color = "black";
+          
+            
+        }
+        
+        function eventsClicked() {
+            minimiseDivs();
+            maximiseTable();
+            
+        }
+        
+        function teamsClicked() {
+            minimiseDivs();
+            maximiseTeamsTable();
+            fetchTeamsData();
+        }
+        function maximiseTeamsTable() {
+            document.getElementById("TeamsTable").style.height = "50vh";
+            document.getElementById("TeamsTable").style.color = "black";
+            document.getElementById("searchIcon").style.height = "36px";
+            document.getElementById("searchIcon").style.borderColor = "black";
+            document.getElementById("searchIcon").style.fontSize = "24px";
+            document.getElementById("SearchDiv").style.height = "35px";
+            document.getElementById("SearchInput").style.height = "34px";
+            
+            
+        }
+        
+        async function fetchTeamsData() {
+            let URL = "http://localhost:8080/Teams/Count";
+            let response = await fetch(URL);
+            let teams = await response.json();
+            
+            let count = teams.count;
+            console.log("Count: " + count);
+            let loopController = 1;
+            
+            while(loopController < count) {
+                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var res = await fetch(TeamURL);
+                var team = await res.json();
+                
+                var school = team.school;
+                var sport = team.sport;
+                var id = team.id;
+                
+                addTeamRow(count, school, sport, id);
+                loopController = loopController + 1;
+            }
+        }
+        
+        function addTeamRow(count, school, sport, id) {
+            
+            var table = document.getElementById("TeamsTable");
+            var row = table.insertRow();
+            var nameCell = row.insertCell();
+            var sportCell = row.insertCell();
+            var moreInfoCell = row.insertCell();
+            row.className = "w3-hover-blue";
+            
+            nameCell.innerHTML = school;
+            sportCell.innerHTML = sport;
+            
+            let url = "http://localhost:8080/moreInfo/" + id;
+            moreInfoCell.innerHTML = '<a href="http://localhost:8080/moreInfo/' + id + '"> More Info</a>';
+            
+        }
+        
+        
+        function basketball() {
+            fetchTeamsDataBasketball();
+            maximiseTeamsTable();
+        }
+        
+        async function fetchTeamsDataBasketball() {
+            let URL = "http://localhost:8080/Teams/Count";
+            let response = await fetch(URL);
+            let teams = await response.json();
+            
+            let count = teams.count;
+            console.log("Count: " + count);
+            let loopController = 1;
+            
+            while(loopController < count) {
+                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var res = await fetch(TeamURL);
+                var team = await res.json();
+                
+                var school = team.school;
+                var sport = team.sport;
+                var id = team.id;
+                
+                if(sport == "basketball") {
+                    addTeamRow(count, school, sport, id);
+                }
+                loopController = loopController + 1;
+            }
+            
+        }
+        
+        
+        function football() {
+            fetchTeamsDataFootball();
+            maximiseTeamsTable();
+        }
+        
+        async function fetchTeamsDataFootball() {
+            let URL = "http://localhost:8080/Teams/Count";
+            let response = await fetch(URL);
+            let teams = await response.json();
+            
+            let count = teams.count;
+            console.log("Count: " + count);
+            let loopController = 1;
+            
+            while(loopController < count) {
+                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var res = await fetch(TeamURL);
+                var team = await res.json();
+                
+                var school = team.school;
+                var sport = team.sport;
+                var id = team.id;
+                
+                if(sport == "football") {
+                    addTeamRow(count, school, sport, id);
+                }
+                loopController = loopController + 1;
+            }
+            
+        }
+        
+        
+        function tennis() {
+            fetchTeamsDataTennis();
+            maximiseTeamsTable();
+        }
+        
+        async function fetchTeamsDataTennis() {
+            let URL = "http://localhost:8080/Teams/Count";
+            let response = await fetch(URL);
+            let teams = await response.json();
+            
+            let count = teams.count;
+            console.log("Count: " + count);
+            let loopController = 1;
+            
+            while(loopController < count) {
+                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var res = await fetch(TeamURL);
+                var team = await res.json();
+                
+                var school = team.school;
+                var sport = team.sport;
+                var id = team.id;
+                
+                if(sport == "tennis") {
+                    addTeamRow(count, school, sport, id);
+                }
+                loopController = loopController + 1;
+            }
+            
+        }
+        
+        
+        function swimming() {
+            fetchTeamsDataSwimming();
+            maximiseTeamsTable();
+        }
+        
+        async function fetchTeamsDataSwimming() {
+            let URL = "http://localhost:8080/Teams/Count";
+            let response = await fetch(URL);
+            let teams = await response.json();
+            
+            let count = teams.count;
+            console.log("Count: " + count);
+            let loopController = 1;
+            
+            while(loopController < count) {
+                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var res = await fetch(TeamURL);
+                var team = await res.json();
+                
+                var school = team.school;
+                var sport = team.sport;
+                var id = team.id;
+                
+                if(sport == "swimming") {
+                    addTeamRow(count, school, sport, id);
+                }
+                loopController = loopController + 1;
+            }
+            
+        }
+        
+        
+        function hockey() {
+            fetchTeamsDataHockey();
+            maximiseTeamsTable();
+        }
+        
+        async function fetchTeamsDataHockey() {
+            let URL = "http://localhost:8080/Teams/Count";
+            let response = await fetch(URL);
+            let teams = await response.json();
+            
+            let count = teams.count;
+            console.log("Count: " + count);
+            let loopController = 1;
+            
+            while(loopController < count) {
+                var TeamURL = "http://localhost:8080/Team/" + loopController;
+                var res = await fetch(TeamURL);
+                var team = await res.json();
+                
+                var school = team.school;
+                var sport = team.sport;
+                var id = team.id;
+                
+                if(sport == "hockey") {
+                    addTeamRow(count, school, sport, id);
+                }
+                loopController = loopController + 1;
+            }
+            
+        }
+        
+        function SearchFilter() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("SearchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("TeamsTable");
+            tr = table.getElementsByTagName("tr");
+            
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1 || tr[i].getElementsByTagName("td")[1].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+            
+        }
+        
+        function searchFocus() {
+            document.getElementById("searchIcon").style.borderColor = "#236dc5";
+            document.getElementById("searchIcon").style.boxShadow = "1px 3px 8px 1px #888888";
+
+        }
+        
+        function searchFocusOut() {
+            document.getElementById("searchIcon").style.borderColor = "Black";
+            document.getElementById("searchIcon").style.boxShadow = "1px 3px 4px 1px #888888";
+
+
+        }
+        
+        
+        
+        
+        
+        
+        
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+            </script>
+        
+        
+        
+        
+        
+        
+        
+    </body>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</html>
