@@ -59,6 +59,12 @@ final class Routes: RouteCollection {
             let p9Age = request.data["P9DOB"]?.string ?? ""
             let p10Age = request.data["P10DOB"]?.string ?? ""
             
+            if event != "football" && event != "basketball" {
+                if category == "u12" {
+                    return try self.view.make("index.html")
+                }
+            }
+            
             let school = School(name: name, event: event, category: category, p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6, p7: p7, p8: p8, p9: p9, p10: p10, p1Age: p1Age, p2Age: p2Age, p3Age: p3Age, p4Age: p4Age, p5Age: p5Age, p6Age: p6Age, p7Age: p7Age, p8Age: p8Age, p9Age: p9Age, p10Age: p10Age)
             
             try school.save()

@@ -21,7 +21,7 @@
     
     <h1 align="center">Reverb 2018 Registration Form</h1>
     <div>
-        <form name="form" method="post" action="" target="_self">
+        <form name="form" method="post" action="" target="_self" onsubmit="return validate()">
             <div>
                 <div style="margin-left:auto;margin-right:auto;margin-top:25px;">
 			<div>
@@ -124,6 +124,25 @@
 				form.querySelector('input[type="submit"]').click();
 			}
 		}
+    
+    function validata() {
+        let eventIndex = document.getElementsByName("Event")[0].selectedIndex;
+        let event = document.getElementsByTagName("option")[eventIndex].value;
+        let catIndex = document.getElementsByName("Category")[0].selectedIndex;
+        let categoryName = document.getElementsByTagName("option")[catIndex + 6].value;
+        
+        if(event == "swimming" || event == "hockey" || event == "tennis") {
+            
+            
+            if (categoryName == "u12") {
+                return false;
+            }
+            
+        }
+        
+        return true;
+        
+    }
 	
 	
 	
