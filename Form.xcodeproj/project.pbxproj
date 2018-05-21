@@ -5392,6 +5392,7 @@
 		OBJ_14 /* Run */ = {
 			isa = PBXGroup;
 			children = (
+				OBJ_15 /* main.swift */,
 			);
 			name = Run;
 			path = Sources/Run;
@@ -7344,7 +7345,6 @@
 				OBJ_10 /* Controllers */,
 				OBJ_12 /* Droplet+Setup.swift */,
 				OBJ_13 /* Routes.swift */,
-				OBJ_15 /* main.swift */,
 			);
 			name = App;
 			path = Sources/App;
