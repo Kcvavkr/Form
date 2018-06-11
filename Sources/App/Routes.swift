@@ -30,7 +30,7 @@ final class Routes: RouteCollection {
                 throw Abort.badRequest
             }
 			guard let gender = request.data["Gender"]?.string else {
-				throw Abort.badRequest()
+				throw Abort.badRequest
 			}
             guard let category = request.data["Category"]?.string else {
                 throw Abort.badRequest
