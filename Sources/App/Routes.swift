@@ -29,6 +29,9 @@ final class Routes: RouteCollection {
             guard let event = request.data["Event"]?.string else {
                 throw Abort.badRequest
             }
+			guard let gender = request.data["Gender"]?.string else {
+				throw Abort.badRequest()
+			}
             guard let category = request.data["Category"]?.string else {
                 throw Abort.badRequest
             }
@@ -65,7 +68,7 @@ final class Routes: RouteCollection {
                 }
             }
             
-            let school = School(name: name, event: event, category: category, p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6, p7: p7, p8: p8, p9: p9, p10: p10, p1Age: p1Age, p2Age: p2Age, p3Age: p3Age, p4Age: p4Age, p5Age: p5Age, p6Age: p6Age, p7Age: p7Age, p8Age: p8Age, p9Age: p9Age, p10Age: p10Age)
+			let school = School(name: name, event: event, category: category, gender: gender, p1: p1, p2: p2, p3: p3, p4: p4, p5: p5, p6: p6, p7: p7, p8: p8, p9: p9, p10: p10, p1Age: p1Age, p2Age: p2Age, p3Age: p3Age, p4Age: p4Age, p5Age: p5Age, p6Age: p6Age, p7Age: p7Age, p8Age: p8Age, p9Age: p9Age, p10Age: p10Age)
             
             try school.save()
             
@@ -125,7 +128,7 @@ final class Routes: RouteCollection {
                                                 "p9": school.p9, "DOB9": school.p9Age,
                                                 "p10": school.p10, "DOB10": school.p10Age,
                                                 "888888": "#888888",
-                                                "sport": school.event, "category": school.category])
+												"sport": school.event, "category": school.category, "gender": school.gender])
         }
         
         

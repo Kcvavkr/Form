@@ -20,7 +20,7 @@
                     <h1 class="text-right" align="center">#(sport)</h1>
                 </div>
                 <div class="col">
-                    <h1 align="center">#(category)</h1>
+					<h1 align="center">#(category), #(gender)</h1>
                 </div>
             </div>
         </div>

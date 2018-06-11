@@ -7,6 +7,7 @@ final class School: Model {
     var name: String
     var event: String
     var category: String
+	var gender: String
     var p1: String
     var p2: String?
     var p3: String?
@@ -36,6 +37,7 @@ final class School: Model {
         name = try row.get("name")
         event = try row.get("event")
         category = try row.get("category")
+		gender = try row.get("gender")
         p1 = try row.get("p1")
         p2 = try row.get("p2")
         p3 = try row.get("p3")
@@ -61,10 +63,11 @@ final class School: Model {
         
     }
     
-    init(name: String, event: String, category: String, p1: String, p2: String?, p3: String?, p4: String?, p5: String?, p6: String?, p7: String?, p8: String?, p9: String?, p10: String?, p1Age: String, p2Age: String?, p3Age: String?, p4Age: String?, p5Age: String?, p6Age: String?, p7Age: String?, p8Age: String?, p9Age: String?, p10Age: String?) {
+	init(name: String, event: String, category: String, gender: String, p1: String, p2: String?, p3: String?, p4: String?, p5: String?, p6: String?, p7: String?, p8: String?, p9: String?, p10: String?, p1Age: String, p2Age: String?, p3Age: String?, p4Age: String?, p5Age: String?, p6Age: String?, p7Age: String?, p8Age: String?, p9Age: String?, p10Age: String?) {
         self.name = name
         self.event = event
         self.category = category
+		self.gender = gender
         
         self.p1 = p1
         self.p2 = p2
@@ -94,7 +97,8 @@ final class School: Model {
         try row.set("name", name)
         try row.set("event", event)
         try row.set("category", category)
-        
+        try row.set("gender", gender)
+		
         try row.set("p1", p1)
         try row.set("p2", p2)
         try row.set("p3", p3)
@@ -131,6 +135,7 @@ extension School: Preparation {
             schools.string("name")
             schools.string("event")
             schools.string("category")
+			schools.string("gender")
             
             schools.string("p1")
             schools.string("p2")
