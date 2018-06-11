@@ -6432,7 +6432,7 @@
 			path = Method;
 			sourceTree = "<group>";
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -6444,7 +6444,6 @@
 				OBJ_24 /* Dependencies */,
 				OBJ_799 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_501 /* Middleware */ = {
@@ -8745,7 +8744,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_799 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

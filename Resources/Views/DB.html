@@ -52,6 +52,23 @@
                     outline: none;
                 }
                 
+                #SearchInput:focus #searchIcon{
+                    border-color: #236dc5;
+                    box-shadow: 1px 3px 8px 1px #888888;
+                    z-index: 100;
+                    
+                }
+                
+                #SearchInput #searchIcon{
+                    box-shadow: 1px 3px 4px 1px #888888;
+                    border-color: black;
+                    
+
+                    
+                }
+                body {
+                    z-index: 1;
+                }
                 
                 
                 
@@ -88,7 +105,7 @@
         
         <div style="height: 35px;">
             
-            <div style="margin-left: auto; margin-right: auto; width: 400px; height: 0px; margin-top: 55px; z-index: 2;" id="SearchDiv"><i class="fa fa-search" style="border: 1px solid transparent; width: 405px; height: 0px; font-size: 0px; padding-left: 5px; border-radius: 5px;" id="searchIcon"><input type="text" style="margin-left: 1px; width: 372px; border: none; border-radius: 5px; height: 0px;" id="SearchInput" onkeyup="SearchFilter()" onfocus="searchFocus()" onfocusout="searchFocusOut()"></i> </div>
+            <div style="margin-left: auto; margin-right: auto; width: 400px; height: 0px; margin-top: 55px; z-index: 2;" id="SearchDiv"><i class="fa fa-search" style="border: 1px solid transparent; width: 405px; height: 0px; font-size: 0px; padding-left: 5px; border-radius: 5px;" id="searchIcon"><input type="text" style="margin-left: 1px; width: 372px; border: none; border-radius: 5px; height: 0px;" id="SearchInput" onkeyup="SearchFilter()" onfocus="searchFocus()" onfocusout="searchFocusOut()" onmouseover="hover()" onmouseout="hoverOut()"></i> </div>
             
             
         
@@ -127,7 +144,7 @@
             
         </table>
         
-        <table id="TeamsTable" class="w3-table-all w3-hoverable">
+        <table id="TeamsTable" class="w3-table-all w3-hoverable" style="z-index: 0">
             <thead>
                 
                 <tr class="w3-hover-black">
@@ -411,7 +428,9 @@
         
         function searchFocus() {
             document.getElementById("searchIcon").style.borderColor = "#236dc5";
-            document.getElementById("searchIcon").style.boxShadow = "1px 3px 8px 1px #888888";
+            document.getElementById("searchIcon").style.zIndex = "5";
+            document.getElementById("searchIcon").style.transitionDuration = "0.2s";
+            document.getElementById("searchIcon").style.boxShadow = "1px 3px 16px 1px #888888";
 
         }
         
@@ -420,6 +439,25 @@
             document.getElementById("searchIcon").style.boxShadow = "1px 3px 4px 1px #888888";
 
 
+        }
+        
+        function hover() {
+            document.getElementById("searchIcon").style.zIndex = "5";
+
+            document.getElementById("searchIcon").style.transitionDuration = "0.2s";
+
+            document.getElementById("searchIcon").style.boxShadow = "1px 3px 8px 1px #888888";
+
+            
+        }
+        
+        function hoverOut() {
+            document.getElementById("searchIcon").style.zIndex = "5";
+            
+            document.getElementById("searchIcon").style.transitionDuration = "0.2s";
+            
+            document.getElementById("searchIcon").style.boxShadow = "1px 3px 4px 1px #888888";
+            
         }
         
         
