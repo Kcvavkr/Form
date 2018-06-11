@@ -103,11 +103,11 @@
 			let catIndex = document.getElementsByName("Category")[0].selectedIndex;
 			let categoryName = document.getElementsByTagName("option")[catIndex + 6].value;
 
-			if(event == "football" || event == "basketball") {
+			if(event == "swimming" || event == "hockey" || event == "tennis") {
 				
 				
-				if (categoryName == "u12") {
-					alert("error. " + event + " is only available for Under 10");
+				if (categoryName == "u10") {
+					alert("error. " + event + " is only available for Under 12");
 				} else {
 					submit();
 				}
@@ -131,10 +131,10 @@
         let catIndex = document.getElementsByName("Category")[0].selectedIndex;
         let categoryName = document.getElementsByTagName("option")[catIndex + 6].value;
         
-        if(event == "football" || event == "basketball") {
+		if(event == "swimming" || event == "hockey" || event == "tennis") {
             
             
-            if (categoryName == "u12") {
+            if (categoryName == "u10") {
                 return false;
             }
             
